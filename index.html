@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine Chinna?</h1>
+        <div class="buttons">
+            <button class="yes-button" onclick="handleYesClick()">Yes</button>
+            <button class="no-button" onclick="handleNoClick()">No</button>
+        </div>
+        <div class="gif_container">
+            <video  width="" height="240" autoplay loop muted>auto
+                <source src="images/video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+        </div>
+    </div>
+    <script>const messages = [
+        "Are you sure?",
+        "Really sure??",
+        "Are you positive?",
+        "Chinna please...",
+        "Just think about it!",
+        "If you say no, I will be really sad 🥺...",
+        "Please na...👉👈",
+        "Ek baar soch lo na ji",
+        "Ok fine, whatever.",
+        "Just kidding, say yes please! ❤️"
+    ];
+    
+    let messageIndex = 0;
+    
+    function handleNoClick() {
+        const noButton = document.querySelector('.no-button');
+        const yesButton = document.querySelector('.yes-button');
+        noButton.textContent = messages[messageIndex];
+        messageIndex = (messageIndex + 1) % messages.length;
+        const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+        yesButton.style.fontSize = `${currentSize * 1.5}px`;
+    }
+    
+    function handleYesClick() {
+        window.location.href = "yes.html";
+    }</script>
+</body>
+</html>
